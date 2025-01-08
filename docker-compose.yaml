@@ -1,0 +1,8 @@
+services:
+  bun:
+    image: kevcam7/hello-bun
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "80:3000"
