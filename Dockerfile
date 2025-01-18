@@ -38,6 +38,6 @@ COPY --from=install /temp/prod/node_modules node_modules
 COPY --from=prerelease /app/index.ts .
 COPY --from=prerelease /app/package.json .
 
-EXPOSE 3000
+EXPOSE 8080
 
 CMD ["bun", "run", "start"]
