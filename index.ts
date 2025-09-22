@@ -2,6 +2,7 @@ import figlet from "figlet";
 
 const server = Bun.serve({
   port: 8080,
+  hostname: '0.0.0.0',
   fetch(req) {
     const body = figlet.textSync(
       "Hello Bun!"
@@ -10,4 +11,4 @@ const server = Bun.serve({
   },
 });
 
-console.log(`Listening on http://localhost:${server.port} ...`);
+console.log(`Listening on http://0.0.0.0:${server.port} ...`);
