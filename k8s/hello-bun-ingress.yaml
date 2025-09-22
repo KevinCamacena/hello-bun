@@ -1,0 +1,18 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: hello-bun-ingress
+  namespace: default
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: bun.hello.com
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: hello-bun-service
+            port:
+              number: 8080
