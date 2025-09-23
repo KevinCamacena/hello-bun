@@ -5,7 +5,7 @@ const server = Bun.serve({
   hostname: '0.0.0.0',
   fetch(req) {
     const body = figlet.textSync(
-      "Hello Bun!"
+      "Hello Bun!\nNow running with ArgoCD\nand Kubernetes"
     );
     return new Response(body);
   },
