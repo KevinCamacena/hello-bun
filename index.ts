@@ -2,7 +2,7 @@ import figlet from "figlet";
 
 const server = Bun.serve({
   port: 8080,
-  hostname: '0.0.0.0',
+  hostname: '127.0.0.1',
   fetch(req) {
     const body = figlet.textSync(
       "Hello Bun!\nNow running with ArgoCD\nand Kubernetes"
