@@ -1,6 +1,6 @@
 services:
   bun:
-    image: docker.io/kevcam7/hello-bun
+    image: docker.io/kevcam7/hello-bun-app
     build:
       context: .
       dockerfile: Dockerfile

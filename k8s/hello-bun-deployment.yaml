@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: hello-bun
-          image: docker.io/kevcam7/hello-bun
+          image: docker.io/kevcam7/hello-bun-app
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 8080
