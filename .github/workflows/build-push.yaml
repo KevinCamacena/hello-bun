@@ -31,13 +31,18 @@ jobs:
 
       # Step 3: Extract Docker metadata for smart tagging
       - name: Extract Docker metadata
-
         id: meta
         uses: docker/metadata-action@v5
-
         with:
-          # IMPORTANT: Replace 'hello-bun-app' with your image name
           images: ${{ vars.DOCKERHUB_USERNAME }}/hello-bun-app
+        tags: |
+        # Create a 'latest' tag only when pushing to the main branch 
+        type=raw,value=latest,enable={{is_default_branch}}
+        # Create a tag from the branch name when pushing to a branch 
+        type=ref,event=branch
+        # Create version tags (e.g., 1.1.0 1.1) when a git tag like v1.1.0 is pushed 
+        type=semver,pattern={{version}}
+        type=semver,pattern={{major}}.{{minor}}
 
       # Step 4: Set up Docker Buildx
       - name: Set up Docker Buildx
